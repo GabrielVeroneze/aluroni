@@ -1,3 +1,5 @@
+@use '@/sass/variaveis' as *;
+
 .menu {
-    padding: 1.25rem 15.625rem;
+    padding: 1.25rem $padding-horizontal;
 }
