@@ -1,4 +1,5 @@
 import { useFiltro } from '@/context/Filtro'
+import classNames from 'classnames'
 import styles from './Filtros.module.scss'
 
 interface FiltrosProps {
@@ -12,7 +13,10 @@ const Filtros = ({ label, id }: FiltrosProps) => {
     return (
         <div className={styles.filtros}>
             <button
-                className={styles.filtros__filtro}
+                className={classNames({
+                    [styles.filtros__filtro]: true,
+                    [styles['filtros__filtro--ativo']]: filtro === id,
+                })}
                 onClick={() => selecionarFiltro(id)}
             >
                 {label}
