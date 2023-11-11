@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 
 interface FiltroContextType {
     filtro: number | null
@@ -20,9 +20,26 @@ interface FiltroProviderProps {
 export const FiltroProvider = ({ children }: FiltroProviderProps) => {
     const [filtro, setFiltro] = useState<number | null>(defaultValue.filtro)
 
-    return(
+    return (
         <FiltroContext.Provider value={{ filtro, setFiltro }}>
             {children}
         </FiltroContext.Provider>
     )
+}
+
+export const useFiltro = () => {
+    const { filtro, setFiltro } = useContext(FiltroContext)
+
+    const selecionarFiltro = (id: number) => {
+        if (filtro === id) {
+            return setFiltro(null)
+        }
+
+        setFiltro(id)
+    }
+
+    return {
+        filtro,
+        selecionarFiltro,
+    }
 }
