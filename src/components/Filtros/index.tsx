@@ -1,3 +1,4 @@
+import { useFiltro } from '@/context/Filtro'
 import styles from './Filtros.module.scss'
 
 interface FiltrosProps {
@@ -6,15 +7,13 @@ interface FiltrosProps {
 }
 
 const Filtros = ({ label, id }: FiltrosProps) => {
-    const selecionarFiltro = () => {
-        console.log('Selecionado!')
-    }
+    const { filtro, selecionarFiltro } = useFiltro()
 
     return (
         <div className={styles.filtros}>
             <button
                 className={styles.filtros__filtro}
-                onClick={() => selecionarFiltro()}
+                onClick={() => selecionarFiltro(id)}
             >
                 {label}
             </button>
