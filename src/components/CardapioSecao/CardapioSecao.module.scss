@@ -1,0 +1,30 @@
+@use '@/sass/variaveis' as *;
+@use '@/sass/breakpoints' as *;
+
+.cardapio {
+    padding: 3.125rem $padding-horizontal;
+
+    &__titulo {
+        color: $escuro;
+        font-size: 3rem;
+        margin-bottom: 1.875rem;
+    }
+}
+
+@media (max-width: $desktop_xsm) {
+    .cardapio {
+        padding: 3.125rem $padding-horizontal-mobile;
+    }
+}
+
+@media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    .cardapio {
+        padding: 3.125rem $padding-horizontal-sm;
+    }
+}
+
+@media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    .cardapio {
+        padding: 3.125rem $padding-horizontal-md;
+    }
+}
