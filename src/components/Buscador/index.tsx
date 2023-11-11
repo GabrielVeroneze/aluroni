@@ -10,6 +10,7 @@ const Buscador = () => {
         <div className={styles.container}>
             <input
                 className={styles.input}
+                placeholder='Buscar'
                 value={busca}
                 onChange={evento => setBusca(evento.target.value)}
             />
