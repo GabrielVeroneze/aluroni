@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { BuscaContext } from '@/context/Busca'
+import { CgSearch } from 'react-icons/cg'
 import styles from './Buscador.module.scss'
 
 const Buscador = () => {
@@ -12,6 +13,7 @@ const Buscador = () => {
                 value={busca}
                 onChange={evento => setBusca(evento.target.value)}
             />
+            <CgSearch size={20} color="#4C4D5E" />
         </div>
     )
 }
