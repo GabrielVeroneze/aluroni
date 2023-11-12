@@ -11,6 +11,7 @@ const Opcao = ({ nome, value }: OpcaoProps) => {
     const { setOrdenador } = useContext(OrdenarContext)
 
     return (
+        <div className={styles.option} onClick={() => setOrdenador(value)}>
             {nome}
         </div>
     )
