@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { OrdenarContext } from '@/context/Ordenar'
 import styles from './Opcao.module.scss'
 
 interface OpcaoProps {
@@ -6,8 +8,9 @@ interface OpcaoProps {
 }
 
 const Opcao = ({ nome, value }: OpcaoProps) => {
+    const { setOrdenador } = useContext(OrdenarContext)
+
     return (
-        <div className={styles.option}>
             {nome}
         </div>
     )
