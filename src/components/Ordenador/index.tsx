@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { OrdenarContext } from '@/context/Ordenar'
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 import classNames from 'classnames'
 import Opcao from './Opcao'
@@ -7,14 +8,14 @@ import styles from './Ordenador.module.scss'
 
 const Ordenador = () => {
     const [aberto, setAberto] = useState<boolean>(false)
+    const { ordenador } = useContext(OrdenarContext)
+
 
     return (
         <button
-            className={styles.ordenador}
             onClick={() => setAberto(!aberto)}
             onBlur={() => setAberto(false)}
         >
-            <span>Ordenar Por</span>
             {aberto ? (
                 <MdKeyboardArrowUp size={20} />
             ) : (
