@@ -10,6 +10,7 @@ const Ordenador = () => {
     const [aberto, setAberto] = useState<boolean>(false)
     const { ordenador } = useContext(OrdenarContext)
 
+    const nomeOrdenador = opcoes.find(opcao => opcao.value === ordenador)?.nome
 
     return (
         <button
@@ -20,6 +21,7 @@ const Ordenador = () => {
             onClick={() => setAberto(!aberto)}
             onBlur={() => setAberto(false)}
         >
+            <span>{nomeOrdenador || 'Ordenar Por'}</span>
             {aberto ? (
                 <MdKeyboardArrowUp size={20} />
             ) : (
