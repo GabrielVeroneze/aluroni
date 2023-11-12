@@ -13,6 +13,10 @@ const Ordenador = () => {
 
     return (
         <button
+            className={classNames({
+                [styles.ordenador]: true,
+                [styles['ordenador--ativo']]: ordenador !== ''
+            })}
             onClick={() => setAberto(!aberto)}
             onBlur={() => setAberto(false)}
         >
