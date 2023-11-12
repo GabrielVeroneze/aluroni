@@ -11,17 +11,15 @@ const Filtros = ({ label, id }: FiltrosProps) => {
     const { filtro, selecionarFiltro } = useFiltro()
 
     return (
-        <div className={styles.filtros}>
-            <button
-                className={classNames({
-                    [styles.filtros__filtro]: true,
-                    [styles['filtros__filtro--ativo']]: filtro === id,
-                })}
-                onClick={() => selecionarFiltro(id)}
-            >
-                {label}
-            </button>
-        </div>
+        <button
+            className={classNames({
+                [styles.filtro]: true,
+                [styles['filtro--ativo']]: filtro === id,
+            })}
+            onClick={() => selecionarFiltro(id)}
+        >
+            {label}
+        </button>
     )
 }
 

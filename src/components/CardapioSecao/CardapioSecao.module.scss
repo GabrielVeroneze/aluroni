@@ -10,13 +10,20 @@
         margin-bottom: 1.875rem;
     }
 
-    &__filtros {
+    &__controles {
         align-items: center;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin-bottom: 1.875rem;
         width: 100%;
+    }
+
+    &__filtros {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin: 1.25rem 0;
     }
 }
 
