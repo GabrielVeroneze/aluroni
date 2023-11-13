@@ -25,6 +25,14 @@
         gap: 1.5rem;
         margin: 1.25rem 0;
     }
+
+    &__itens {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        width: 100%;
+    }
 }
 
 @media (max-width: $desktop_xsm) {
