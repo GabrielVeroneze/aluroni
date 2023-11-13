@@ -6,20 +6,22 @@ interface ItensProps {
     item: ICardapioItem
 }
 
-const Itens = ({ item }: ItensProps) => {    
+const Itens = ({ item }: ItensProps) => {
+    const { title, description, photo } = item
+
     return (
         <div className={styles.item}>
             <img
                 className={styles.item__imagem}
-                src={item.photo}
-                alt=""
+                src={photo}
+                alt={title}
             />
             <div className={styles.item__info}>
                 <h2 className={styles.item__titulo}>
-                    {item.title}
+                    {title}
                 </h2>
                 <p className={styles.item__descricao}>
-                    {item.description}
+                    {description}
                 </p>
                 <Tags item={item} />
             </div>
