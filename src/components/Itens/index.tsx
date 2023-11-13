@@ -9,14 +9,18 @@ interface ItensProps {
 const Itens = ({ item }: ItensProps) => {    
     return (
         <div className={styles.item}>
-            <div className={styles.item__imagem}>
-                <img src={item.photo} alt="" />
-            </div>
-            <div className={styles.item__descricao}>
-                <div className={styles.item__titulo}>
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
-                </div>
+            <img
+                className={styles.item__imagem}
+                src={item.photo}
+                alt=""
+            />
+            <div className={styles.item__info}>
+                <h2 className={styles.item__titulo}>
+                    {item.title}
+                </h2>
+                <p className={styles.item__descricao}>
+                    {item.description}
+                </p>
                 <Tags item={item} />
             </div>
         </div>
