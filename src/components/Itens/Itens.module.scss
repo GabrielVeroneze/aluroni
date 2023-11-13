@@ -1,11 +1,6 @@
 @use '@/sass/variaveis' as *;
 @use '@/sass/breakpoints' as *;
 
-$massas: #d73b3b;
-$carnes: #30201e;
-$combos: #e6c864;
-$veganos: #80aa40;
-
 .item {
     display: flex;
     flex-wrap: wrap;
@@ -44,61 +39,6 @@ $veganos: #80aa40;
             max-width: 600px;
         }
     }
-
-    &__tags {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 1.25rem;
-        max-width: 700px;
-
-        > div {
-            margin: 0.625rem;
-        }
-    }
-
-    &__tipo {
-        align-items: center;
-        border-radius: 2px;
-        display: flex;
-        font-weight: bold;
-        height: 40px;
-        justify-content: center;
-        padding: 0.625rem 1.875rem;
-
-        &__massas {
-            background-color: $massas;
-            color: $branco;
-        }
-
-        &__carnes {
-            background-color: $carnes;
-            color: $branco;
-        }
-
-        &__combos {
-            background-color: $combos;
-        }
-
-        &__veganos {
-            background-color: $veganos;
-        }
-    }
-
-    &__porcao,
-    &__qtdpessoas,
-    &__valor {
-        align-items: center;
-        display: flex;
-        font-size: 1.25rem;
-        font-weight: bold;
-        justify-content: center;
-    }
-
-    &__valor {
-        color: $vermelho;
-        font-size: 1.7rem;
-    }
 }
 
 @media (max-width: $desktop_xsm) {
@@ -111,18 +51,6 @@ $veganos: #80aa40;
             flex-direction: row;
             margin-top: 1.25rem;
             padding: 0;
-        }
-
-        &__tags {
-            justify-content: flex-end;
-        }
-    }
-}
-
-@media (max-width: $mobile) {
-    .item {
-        &__tags {
-            justify-content: flex-start;
         }
     }
 }
