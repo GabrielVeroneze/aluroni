@@ -1,4 +1,5 @@
 import { ICardapioItem } from "@/interfaces/ICardapioItem"
+import Tags from "./Tags"
 import styles from './Itens.module.scss'
 
 interface ItensProps {
@@ -16,6 +17,7 @@ const Itens = ({ item }: ItensProps) => {
                     <h2>{item.title}</h2>
                     <p>{item.description}</p>
                 </div>
+                <Tags item={item} />
             </div>
         </div>
     )
