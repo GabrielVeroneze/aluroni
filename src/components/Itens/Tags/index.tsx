@@ -6,19 +6,21 @@ interface TagsProps {
 }
 
 const Tags = ({ item }: TagsProps) => {
+    const { size, serving, price, category } = item
+
     return (
         <div className={styles.tags}>
             <div className={styles.tags__tipo}>
-                {item.category.label}
+                {category.label}
             </div>
             <div className={styles.tags__porcao}>
-                {item.size}g
+                {size}g
             </div>
             <div className={styles.tags__pessoas}>
-                Serve {item.serving} pessoas
+                Serve {serving} pessoa{serving === 1 ? '' : 's'}
             </div>
             <div className={styles.tags__valor}>
-                R$ {item.price}
+                R$ {price.toFixed(2)}
             </div>
         </div>
     )
