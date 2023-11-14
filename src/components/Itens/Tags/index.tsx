@@ -1,4 +1,5 @@
 import { ICardapioItem } from '@/interfaces/ICardapioItem'
+import classNames from 'classnames'
 import styles from './Tags.module.scss'
 
 interface TagsProps {
@@ -10,7 +11,12 @@ const Tags = ({ item }: TagsProps) => {
 
     return (
         <div className={styles.tags}>
-            <div className={styles.tags__tipo}>
+            <div 
+                className={classNames({
+                    [styles.tags__tipo]: true,
+                    [styles[`tags__tipo__${category.label.toLowerCase()}`]]: true
+                })}
+            >
                 {category.label}
             </div>
             <div className={styles.tags__porcao}>
