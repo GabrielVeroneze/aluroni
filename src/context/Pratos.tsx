@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import { ICardapioItem } from '@/interfaces/ICardapioItem'
 
 interface PratosContextType {
@@ -26,5 +26,25 @@ export const PratosProvider = ({ children }: PratosProviderProps) => {
             {children}
         </PratosContext.Provider>
     )
+}
+
+export const usePratos = () => {
+    const { pratos, setPratos } = useContext(PratosContext)
+
+    useEffect(() => {
+        (async function () {
+            try {
+                const resposta = await fetch('https://my-json-server.typicode.com/gabrielveroneze/aluroni-api/itens')
+                const dados = await resposta.json()
+                setPratos(dados)
+            } catch (erro) {
+                console.log(erro)
+            }
+        })()
+    }, [setPratos])
+
+    return {
+        pratos
+    }
 }
 
