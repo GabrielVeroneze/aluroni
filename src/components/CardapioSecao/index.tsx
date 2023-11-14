@@ -1,4 +1,4 @@
-import { useBuscarItensCardapio } from '@/hooks/useBuscarItensCardapio'
+import { usePratos } from '@/context/pratos'
 import Buscador from '@/components/Buscador'
 import Filtros from '@/components/Filtros'
 import Ordenador from '@/components/Ordenador'
@@ -7,7 +7,7 @@ import filtros from '@/json/filtros.json'
 import styles from './CardapioSecao.module.scss'
 
 const CardapioSecao = () => {
-    const { cardapioItens } = useBuscarItensCardapio()
+    const { pratos } = usePratos()
 
     return (
         <section className={styles.cardapio}>
@@ -22,7 +22,7 @@ const CardapioSecao = () => {
                 <Ordenador />
             </div>
             <div className={styles.cardapio__itens}>
-                {cardapioItens.map(item => (
+                {pratos.map(item => (
                     <Itens key={item.id} item={item} />
                 ))}
             </div>
