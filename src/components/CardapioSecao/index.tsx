@@ -1,4 +1,4 @@
-import { usePratos } from '@/context/pratos'
+import { usePratos } from '@/context/Pratos'
 import Buscador from '@/components/Buscador'
 import Filtros from '@/components/Filtros'
 import Ordenador from '@/components/Ordenador'

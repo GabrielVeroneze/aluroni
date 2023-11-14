@@ -1,4 +1,4 @@
-import { PratosProvider } from '@/context/pratos'
+import { PratosProvider } from '@/context/Pratos'
 import { BuscaProvider } from '@/context/Busca'
 import { FiltroProvider } from '@/context/Filtro'
 import { OrdenarProvider } from '@/context/Ordenar'
