@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useFiltro } from '@/context/Filtro'
 import { BuscaContext } from '@/context/Busca'
 import { useBuscarCardapioPratos } from '@/hooks/useBuscarCardapioPratos'
+import { ICardapioItem } from '@/interfaces/ICardapioItem'
 import Buscador from '@/components/Buscador'
 import Filtros from '@/components/Filtros'
 import Ordenador from '@/components/Ordenador'
@@ -13,6 +14,8 @@ const CardapioSecao = () => {
     const { cardapioPratos } = useBuscarCardapioPratos()
     const { filtro } = useFiltro()
     const { busca } = useContext(BuscaContext)
+
+    const [pratos, setPratos] = useState<ICardapioItem[]>([])
 
     return (
         <section className={styles.cardapio}>
