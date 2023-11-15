@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { useFiltro } from '@/context/Filtro'
 import { BuscaContext } from '@/context/Busca'
+import { useBuscarCardapioPratos } from '@/hooks/useBuscarCardapioPratos'
 import Buscador from '@/components/Buscador'
 import Filtros from '@/components/Filtros'
 import Ordenador from '@/components/Ordenador'
@@ -9,6 +10,7 @@ import filtros from '@/json/filtros.json'
 import styles from './CardapioSecao.module.scss'
 
 const CardapioSecao = () => {
+    const { cardapioPratos } = useBuscarCardapioPratos()
     const { filtro } = useFiltro()
     const { busca } = useContext(BuscaContext)
 
