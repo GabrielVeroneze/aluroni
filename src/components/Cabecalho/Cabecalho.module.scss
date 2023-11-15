@@ -19,13 +19,20 @@
     }
 }
 
-@media (max-width: $desktop_xsm) {
+@media (max-width: $mobile) {
     .header {
         padding: 0 $padding-horizontal-mobile;
+
+        &__text {
+            font-size: 4rem;
+            min-width: unset;
+            max-width: 300px;
+            width: 100%;
+        }
     }
 }
 
-@media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+@media (min-width: $mobile) and (max-width: $desktop_sm) {
     .header {
         padding: 0 $padding-horizontal-sm;
     }

@@ -7,7 +7,7 @@
     &__titulo {
         color: $escuro;
         font-size: 3rem;
-        margin-bottom: 1.875rem;
+        margin: 0 0 1.875rem;
     }
 
     &__controles {
@@ -35,13 +35,25 @@
     }
 }
 
-@media (max-width: $desktop_xsm) {
+@media (max-width: $mobile) {
     .cardapio {
         padding: 3.125rem $padding-horizontal-mobile;
+
+        &__titulo {
+            font-size: 2.75rem;
+        }
+
+        &__controles, &__filtros {
+            justify-content: center;
+        }
+
+        &__itens {
+            align-items: center;
+        }
     }
 }
 
-@media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+@media (min-width: $mobile) and (max-width: $desktop_sm) {
     .cardapio {
         padding: 3.125rem $padding-horizontal-sm;
     }

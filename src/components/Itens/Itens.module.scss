@@ -36,6 +36,12 @@
     }
 }
 
+@media (max-width: $mobile) {
+    .item {
+        max-width: 500px;
+    }
+}
+
 @media (max-width: $desktop_xsm) {
     .item {
         &__imagem {
@@ -43,7 +49,7 @@
         }
 
         &__info {
-            flex-direction: row;
+            align-items: center;
         }
     }
 }

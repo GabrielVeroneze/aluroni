@@ -60,14 +60,15 @@ $veganos: #80aa40;
     }
 }
 
-@media (max-width: $desktop_xsm) {
+@media (max-width: $mobile) {
+    .tags {
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $desktop_xsm) {
     .tags {
         justify-content: flex-end;
     }
 }
 
-@media (max-width: $mobile) {
-    .tags {
-        justify-content: flex-start;
-    }
-}
