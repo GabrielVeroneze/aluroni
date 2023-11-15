@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import { useBuscarCardapioPratos } from '@/hooks/useBuscarCardapioPratos'
 import { ICardapioItem } from '@/interfaces/ICardapioItem'
 
 interface PratosContextType {
@@ -29,22 +30,14 @@ export const PratosProvider = ({ children }: PratosProviderProps) => {
 }
 
 export const usePratos = () => {
+    const { cardapioPratos } = useBuscarCardapioPratos()
     const { pratos, setPratos } = useContext(PratosContext)
 
     useEffect(() => {
-        (async function () {
-            try {
-                const resposta = await fetch('https://my-json-server.typicode.com/gabrielveroneze/aluroni-api/itens')
-                const dados = await resposta.json()
-                setPratos(dados)
-            } catch (erro) {
-                console.log(erro)
-            }
-        })()
-    }, [setPratos])
+        setPratos(cardapioPratos)
+    }, [cardapioPratos, setPratos])
 
     return {
         pratos
     }
 }
-
