@@ -18,8 +18,15 @@ const CardapioSecao = () => {
 
     const [pratos, setPratos] = useState<ICardapioItem[]>([])
 
+    useEffect(() => {
+        setPratos(
+            cardapioPratos.filter(prato => 
                 verificaBusca(prato.title, busca) &&
                 verificaFiltro(prato.category.id, filtro)
+            )
+        )
+    }, [cardapioPratos, busca, filtro])
+
     return (
         <section className={styles.cardapio}>
             <h3 className={styles.cardapio__titulo}>Cardápio</h3>
