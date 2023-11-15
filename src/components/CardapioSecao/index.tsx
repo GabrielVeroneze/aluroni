@@ -3,7 +3,7 @@ import { useFiltro } from '@/context/Filtro'
 import { BuscaContext } from '@/context/Busca'
 import { OrdenarContext } from '@/context/Ordenar'
 import { useBuscarCardapioPratos } from '@/hooks/useBuscarCardapioPratos'
-import { verificaBusca, verificaFiltro } from '@/utils/controles'
+import { ordenar, verificaBusca, verificaFiltro } from '@/utils/controles'
 import { ICardapioItem } from '@/interfaces/ICardapioItem'
 import Buscador from '@/components/Buscador'
 import Filtros from '@/components/Filtros'
@@ -21,13 +21,13 @@ const CardapioSecao = () => {
     const [pratos, setPratos] = useState<ICardapioItem[]>([])
 
     useEffect(() => {
-        setPratos(
-            cardapioPratos.filter(prato => 
-                verificaBusca(prato.title, busca) &&
-                verificaFiltro(prato.category.id, filtro)
-            )
+        const novaLista = cardapioPratos.filter(prato => 
+            verificaBusca(prato.title, busca) &&
+            verificaFiltro(prato.category.id, filtro)
         )
-    }, [cardapioPratos, busca, filtro])
+        
+        setPratos(ordenar(novaLista, ordenador))
+    }, [cardapioPratos, busca, filtro, ordenador])
 
     return (
         <section className={styles.cardapio}>
